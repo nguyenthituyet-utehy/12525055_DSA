@@ -1,1 +1,876 @@
 
+//PHAN 1: BAI TAP CHUONG 1
+
+//BAI 1
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai1_MangMaxMin();
+//        }
+
+//        static void Bai1_MangMaxMin()
+//        {
+//            int[] a = new int[1000];
+//            Random rd = new Random();
+
+//            for (int i = 0; i < a.Length; i++)
+//            {
+//                a[i] = rd.Next(1, 1000);
+//            }
+//            int max = a[0];
+//            int min = a[0];
+//            for (int i = 1; i < a.Length; i++)
+//            {
+//                if (a[i] > max)
+//                    max = a[i];
+//                if (a[i] < min)
+//                    min = a[i];
+//            }
+//            Console.WriteLine("So lon nhat la: " + max);
+//            Console.WriteLine("So nho nhat la: " + min);
+
+//        }
+
+//    }
+//}
+
+
+//Bai2
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai2_FizzBuzz();
+//        }
+//        static void Bai2_FizzBuzz()
+//        {
+//            for (int i = 1; i <= 100; i++)
+//            {
+//                if (i % 3 == 0 && i % 5 == 0)
+//                    Console.Write("FizzBuzz ");
+//                else if (i % 3 == 0)
+//                    Console.Write("Fizz ");
+//                else if (i % 5 == 0)
+//                    Console.Write("Buzz ");
+//                else
+//                    Console.Write(i + " ");
+//            }
+//            Console.WriteLine();
+
+//        }
+//    }
+//}
+
+//Bai 3
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai3_DaoNguocChuoi();
+//        }
+//        static void Bai3_DaoNguocChuoi()
+//        {
+//            Console.Write("Nhap chuoi: ");
+//            String chuoi = Console.ReadLine();
+//            string chuoiDao = "";
+//            for (int i = chuoi.Length - 1; i >= 0; i--)
+//            {
+//                chuoiDao += chuoi[i];
+//            }
+//            Console.WriteLine("Chuoi dao nguoc " + chuoiDao);
+//        }
+//    }
+//}
+
+//Bai4
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai4_SapXepMang();
+//        }
+//        static void Bai4_SapXepMang()
+//        {
+//            int[] a = new int[1000];
+//            Random rd = new Random();
+
+//            for (int i = 0; i < a.Length; i++)
+//            {
+//                a[i] = rd.Next(1, 10000);
+//            }
+
+//            Console.WriteLine("Mang ban dau:");
+//            InMang(a);
+//            for (int i = 0; i < a.Length - 1; i++)
+//            {
+//                for (int j = 0; j < a.Length - i - 1; j++)
+//                {
+//                    if (a[j] > a[j + 1])
+//                    {
+//                        int temp = a[j];
+//                        a[j] = a[j + 1];
+//                        a[j + 1] = temp;
+//                    }
+//                }
+//            }
+
+//            Console.WriteLine("Mang sau khi sap xep:");
+//            InMang(a);
+//        }
+
+//        static void InMang(int[] a)
+//        {
+//            for (int i = 0; i < a.Length; i++)
+//            {
+//                Console.Write(a[i] + " ");
+
+//                if ((i + 1) % 20 == 0)
+//                    Console.WriteLine();
+//            }
+
+//            Console.WriteLine();
+//        }
+//    }
+//}
+
+
+
+//Bai5
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai5_Fibonacci();
+//        }
+//        static void Bai5_Fibonacci()
+//        {
+//            Console.Write("Nhap n (0 den 92): ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n < 0 || n > 92)
+//            {
+//                Console.WriteLine("Vui long nhap n tu 0 den 92.");
+//                return;
+//            }
+
+//            Console.WriteLine("F(" + n + ") = " + Fibonacci_Lap(n));
+//        }
+//        static long Fibonacci_Lap(int n)
+//        {
+//            if (n <= 1) return n;
+
+//            long f0 = 0;
+//            long f1 = 1;
+//            long fn = 1;
+
+//            for (int i = 2; i <= n; i++)
+//            {
+//                fn = f0 + f1;
+//                f0 = f1;
+//                f1 = fn;
+//            }
+
+//            return fn;
+//        }
+//    }
+//}
+
+
+
+//PHẦN 2: BÀI TẬP CHƯƠNG 2
+
+//Bài 1
+
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai1_ThapHaNoi();
+//        }
+//        static void Bai1_ThapHaNoi()
+//        {
+//            Console.Write("Nhap so dia (nen nhap n <= 10): ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n <= 0)
+//            {
+//                Console.WriteLine("So dia phai lon hon 0.");
+//                return;
+//            }
+
+//            ChuyenDia(n, 'A', 'C', 'B');
+//        }
+
+//        static void ChuyenDia(int n, char cotDau, char cotCuoi, char cotPhu)
+//        {
+//            if (n == 1)
+//            {
+//                Console.WriteLine("Chuyen dia tu cot " + cotDau + " sang cot " + cotCuoi);
+//            }
+//            else
+//            {
+//                ChuyenDia(n - 1, cotDau, cotPhu, cotCuoi);
+//                Console.WriteLine("Chuyen dia tu cot " + cotDau + " sang cot " + cotCuoi);
+//                ChuyenDia(n - 1, cotPhu, cotCuoi, cotDau);
+//            }
+//        }
+//    }
+//}
+
+
+//Bai2
+
+
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai2_TimKiemNhiPhan();
+//        }
+//        static void Bai2_TimKiemNhiPhan()
+//        {
+//            Console.Write("Nhap so phan tu cua mang: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n <= 0)
+//            {
+//                Console.WriteLine("So phan tu phai lon hon 0.");
+//                return;
+//            }
+
+//            int[] a = new int[n];
+//            Console.WriteLine("Nhap cac phan tu theo thu tu tang dan:");
+
+//            for (int i = 0; i < n; i++)
+//            {
+//                Console.Write("a[" + i + "] = ");
+//                a[i] = int.Parse(Console.ReadLine());
+//            }
+
+//            Console.Write("Nhap gia tri can tim: ");
+//            int x = int.Parse(Console.ReadLine());
+
+//            int kq1 = TimNhiPhan_VongLap(a, x);
+//            int kq2 = TimNhiPhan_DeQuy(a, 0, n - 1, x);
+
+//            Console.WriteLine("Tim bang vong lap: " + (kq1 == -1 ? "Khong tim thay" : "Vi tri " + kq1));
+//            Console.WriteLine("Tim bang de quy: " + (kq2 == -1 ? "Khong tim thay" : "Vi tri " + kq2));
+//        }
+
+//        static int TimNhiPhan_VongLap(int[] a, int x)
+//        {
+//            int left = 0;
+//            int right = a.Length - 1;
+
+//            while (left <= right)
+//            {
+//                int mid = (left + right) / 2;
+
+//                if (a[mid] == x)
+//                    return mid;
+//                else if (a[mid] < x)
+//                    left = mid + 1;
+//                else
+//                    right = mid - 1;
+//            }
+
+//            return -1;
+//        }
+
+//        static int TimNhiPhan_DeQuy(int[] a, int left, int right, int x)
+//        {
+//            if (left > right)
+//                return -1;
+
+//            int mid = (left + right) / 2;
+
+//            if (a[mid] == x)
+//                return mid;
+//            else if (a[mid] < x)
+//                return TimNhiPhan_DeQuy(a, mid + 1, right, x);
+//            else
+//                return TimNhiPhan_DeQuy(a, left, mid - 1, x);
+//        }
+//    }
+//}
+
+//Bai3
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai3_KiemTraNguyenTo();
+//        }
+//        static void Bai3_KiemTraNguyenTo()
+//        {
+//            Console.Write("Nhap so nguyen duong n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            Console.WriteLine("Cach 1: " + (KiemTraNguyenTo_Cach1(n) ? "La so nguyen to" : "Khong phai so nguyen to"));
+//            Console.WriteLine("Cach 2: " + (KiemTraNguyenTo_Cach2(n) ? "La so nguyen to" : "Khong phai so nguyen to"));
+//        }
+
+//        static bool KiemTraNguyenTo_Cach1(int n)
+//        {
+//            if (n < 2)
+//                return false;
+
+//            for (int i = 2; i < n; i++)
+//            {
+//                if (n % i == 0)
+//                    return false;
+//            }
+
+//            return true;
+//        }
+
+//        static bool KiemTraNguyenTo_Cach2(int n)
+//        {
+//            if (n < 2)
+//                return false;
+
+//            for (int i = 2; i <= Math.Sqrt(n); i++)
+//            {
+//                if (n % i == 0)
+//                    return false;
+//            }
+
+//            return true;
+//        }
+//    }
+//}
+
+//Bai4
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai4_SoHoanHao();
+//        }
+//        static void Bai4_SoHoanHao()
+//        {
+//            Console.Write("Nhap N: ");
+//            int N = int.Parse(Console.ReadLine());
+
+//            Console.WriteLine("Cac so hoan hao nho hon N (cach 1):");
+//            for (int i = 1; i < N; i++)
+//            {
+//                if (TongUoc_Cach1(i) == i)
+//                    Console.Write(i + " ");
+//            }
+
+//            Console.WriteLine("\nCac so hoan hao nho hon N (cach 2):");
+//            for (int i = 1; i < N; i++)
+//            {
+//                if (TongUoc_Cach2(i) == i)
+//                    Console.Write(i + " ");
+//            }
+
+//            Console.WriteLine();
+//        }
+
+//        static int TongUoc_Cach1(int n)
+//        {
+//            int tong = 0;
+
+//            for (int i = 1; i < n; i++)
+//            {
+//                if (n % i == 0)
+//                    tong += i;
+//            }
+
+//            return tong;
+//        }
+
+//        static int TongUoc_Cach2(int n)
+//        {
+//            if (n <= 1)
+//                return 0;
+
+//            int tong = 1;
+
+//            for (int i = 2; i * i <= n; i++)
+//            {
+//                if (n % i == 0)
+//                {
+//                    tong += i;
+
+//                    if (i != n / i)
+//                        tong += n / i;
+//                }
+//            }
+
+//            return tong;
+//        }
+//    }
+//}
+
+//Bai5
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai5_SoSanhFibonacci();
+//        }
+//        static void Bai5_SoSanhFibonacci()
+//        {
+//            Console.Write("Nhap n (nen nhap tu 0 den 40): ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n < 0 || n > 40)
+//            {
+//                Console.WriteLine("Vui long nhap n tu 0 den 40 de cach de quy chay nhanh hon.");
+//                return;
+//            }
+
+//            Console.WriteLine("Fibonacci de quy: " + Fibonacci_DeQuy(n));
+//            Console.WriteLine("Fibonacci vong lap: " + Fibonacci_Lap(n));
+//        }
+
+//        static long Fibonacci_DeQuy(int n)
+//        {
+//            if (n == 0)
+//                return 0;
+
+//            if (n == 1)
+//                return 1;
+
+//            return Fibonacci_DeQuy(n - 1) + Fibonacci_DeQuy(n - 2);
+//        }
+
+//        static long Fibonacci_Lap(int n)
+//        {
+//            if (n == 0)
+//                return 0;
+
+//            if (n == 1)
+//                return 1;
+
+//            long a = 0;
+//            long b = 1;
+//            long c = 0;
+
+//            for (int i = 2; i <= n; i++)
+//            {
+//                c = a + b;
+//                a = b;
+//                b = c;
+//            }
+
+//            return b;
+//        }
+//    }
+//}
+
+//Bai6
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai6_SapXep();
+//        }
+//        static void Bai6_SapXep()
+//        {
+//            Console.Write("Nhap so phan tu: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n <= 0)
+//            {
+//                Console.WriteLine("So phan tu phai lon hon 0.");
+//                return;
+//            }
+
+//            double[] a = new double[n];
+//            double[] b = new double[n];
+
+//            for (int i = 0; i < n; i++)
+//            {
+//                Console.Write("Nhap a[" + i + "]: ");
+//                a[i] = double.Parse(Console.ReadLine());
+//                b[i] = a[i];
+//            }
+
+//            SapXepNoiBot(a);
+//            SapXepChon(b);
+
+//            Console.WriteLine("Mang sau khi sap xep noi bot:");
+//            InMangSoThuc(a);
+
+//            Console.WriteLine("Mang sau khi sap xep chon:");
+//            InMangSoThuc(b);
+//        }
+
+//        static void SapXepNoiBot(double[] a)
+//        {
+//            for (int i = 0; i < a.Length - 1; i++)
+//            {
+//                for (int j = 0; j < a.Length - i - 1; j++)
+//                {
+//                    if (a[j] > a[j + 1])
+//                    {
+//                        double temp = a[j];
+//                        a[j] = a[j + 1];
+//                        a[j + 1] = temp;
+//                    }
+//                }
+//            }
+//        }
+
+//        static void SapXepChon(double[] a)
+//        {
+//            for (int i = 0; i < a.Length - 1; i++)
+//            {
+//                int viTriMin = i;
+
+//                for (int j = i + 1; j < a.Length; j++)
+//                {
+//                    if (a[j] < a[viTriMin])
+//                        viTriMin = j;
+//                }
+
+//                double temp = a[i];
+//                a[i] = a[viTriMin];
+//                a[viTriMin] = temp;
+//            }
+//        }
+
+//        static void InMangSoThuc(double[] a)
+//        {
+//            for (int i = 0; i < a.Length; i++)
+//            {
+//                Console.Write(a[i] + " ");
+//            }
+
+//            Console.WriteLine();
+//        }
+//    }
+//}
+
+
+//PHAN 3: BAI TAP CHUONG 3
+
+//Bai1
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai1_TinhTong();
+//        }
+//        static void Bai1_TinhTong()
+//        {
+//            Console.Write("Nhap n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            Console.WriteLine("Tong = " + TinhS_Bai1(n));
+//        }
+
+//        static int TinhS_Bai1(int n)
+//        {
+//            if (n <= 0)
+//                return 0;
+
+//            if (n == 1)
+//                return 1;
+
+//            return TinhS_Bai1(n - 1) + n;
+//        }
+//    }
+//}
+
+//Bai2 
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai2_TongBinhPhuong();
+//        }
+//        static void Bai2_TongBinhPhuong()
+//        {
+//            Console.Write("Nhap n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            Console.WriteLine("Tong binh phuong = " + TinhS_Bai2(n));
+//        }
+
+//        static int TinhS_Bai2(int n)
+//        {
+//            if (n <= 0)
+//                return 0;
+
+//            if (n == 1)
+//                return 1;
+
+//            return TinhS_Bai2(n - 1) + n * n;
+//        }
+//    }
+//}
+
+//Bai3
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai3_TongPhanSo();
+//        }
+//        static void Bai3_TongPhanSo()
+//        {
+//            Console.Write("Nhap n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            Console.WriteLine("Tong = " + TinhS_Bai3(n));
+//        }
+
+//        static double TinhS_Bai3(int n)
+//        {
+//            if (n <= 0)
+//                return 0;
+
+//            if (n == 1)
+//                return 1;
+
+//            return TinhS_Bai3(n - 1) + 1.0 / n;
+//        }
+//    }
+//}
+
+//Bai4
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai4_LuyThua();
+//        }
+//        static void Bai4_LuyThua()
+//        {
+//            Console.Write("Nhap x: ");
+//            double x = double.Parse(Console.ReadLine());
+
+//            Console.Write("Nhap n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (x == 0 && n < 0)
+//            {
+//                Console.WriteLine("Khong tinh duoc 0 mu am.");
+//                return;
+//            }
+
+//            Console.WriteLine("Ket qua = " + LuyThua(x, n));
+//        }
+
+//        static double LuyThua(double x, int n)
+//        {
+//            if (n == 0)
+//                return 1;
+
+//            if (n < 0)
+//                return 1.0 / LuyThua(x, -n);
+
+//            return x * LuyThua(x, n - 1);
+//        }
+//    }
+//}
+
+//Bai5
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai5_UocLeMax();
+//        }
+//        static void Bai5_UocLeMax()
+//        {
+//            Console.Write("Nhap so nguyen duong n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n <= 0)
+//            {
+//                Console.WriteLine("n phai la so nguyen duong.");
+//                return;
+//            }
+
+//            Console.WriteLine("Uoc le lon nhat = " + UocLeMax(n));
+//        }
+
+//        static int UocLeMax(int n)
+//        {
+//            if (n % 2 == 1)
+//                return n;
+
+//            return UocLeMax(n / 2);
+//        }
+//    }
+//}
+
+
+//Bai6
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai6_UCLN();
+//        }
+//        static void Bai6_UCLN()
+//        {
+//            Console.Write("Nhap a: ");
+//            int a = int.Parse(Console.ReadLine());
+
+//            Console.Write("Nhap b: ");
+//            int b = int.Parse(Console.ReadLine());
+
+//            Console.WriteLine("UCLN = " + UCLN(a, b));
+//        }
+
+//        static int UCLN(int a, int b)
+//        {
+//            if (a < 0)
+//                a = -a;
+
+//            if (b < 0)
+//                b = -b;
+
+//            if (b == 0)
+//                return a;
+
+//            return UCLN(b, a % b);
+//        }
+//    }
+//}
+
+//Bai7
+//using System;
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai7_DemChuSo();
+//        }
+//        static void Bai7_DemChuSo()
+//        {
+//            Console.Write("Nhap so nguyen duong n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n < 0)
+//            {
+//                Console.WriteLine("Vui long nhap so nguyen duong.");
+//                return;
+//            }
+
+//            Console.WriteLine("So chu so = " + SoChuSo(n));
+//        }
+
+//        static int SoChuSo(int n)
+//        {
+//            if (n == 0)
+//                return 0;
+
+//            return SoChuSo(n / 10) + 1;
+//        }
+//    }
+//}
+
+
+//Bai8
+//namespace BaiTapSinhVien
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.OutputEncoding = System.Text.Encoding.UTF8;
+//            Bai8_TinhCan();
+//        }
+//        static void Bai8_TinhCan()
+//        {
+//            Console.Write("Nhap n: ");
+//            int n = int.Parse(Console.ReadLine());
+
+//            if (n <= 0)
+//            {
+//                Console.WriteLine("n phai lon hon 0.");
+//                return;
+//            }
+
+//            Console.WriteLine("S(n) = " + TinhCan(1, n));
+//        }
+
+//        static float TinhCan(int i, int n)
+//        {
+//            if (i == n)
+//                return (float)Math.Sqrt(n);
+
+//            return (float)Math.Sqrt(i + TinhCan(i + 1, n));
+//        }
+//    }
+//}
