@@ -1,10 +1,12 @@
-# Bài tập CTDL&GT - 211131
-- Họ tên: Nguyễn Thị Tuyết
-- MSV: 12525055
-- Lớp: 10125N.1
+# Bài tập CTDL&GT – 211131
+
+* Họ tên: Nguyễn Thị Tuyết
+* MSV: 12525055
+* Lớp: 10125N.1
+
 | Buổi | Nội dung | Thư mục | Trạng thái |
-|---|---|---|---|
-| 01 | Đệ quy | Buoi01_DeQuy | Chưa nộp |
+| :---: | :--- | :--- | :--- |
+| 01 | Đệ quy | Buoi01_DeQuy | Đã nộp |
 | 02 | Danh sách | Buoi02_DanhSach | Chưa nộp |
 | 03 | Stack và Queue | Buoi03_Stack_Queue | Chưa nộp |
 | 04 | Cây | Buoi04_Cay | Chưa nộp |
